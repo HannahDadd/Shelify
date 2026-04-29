@@ -11,12 +11,12 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack {
-                Image("night")
+                Image("day")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
             }
             VStack {
-                Image("library")
+                Image("library-11")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             }
