@@ -9,11 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image("library-11")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
+        ZStack {
+            VStack {
+                Image("night")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
+            VStack {
+                Image("library")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            }
+            .ignoresSafeArea()
+//            VStack(alignment: .trailing) {
+//                Text("Words written: 1000")
+//                    .padding()
+//                    .background(.yellow)
+//                    .foregroundStyle(.white)
+//                    .font(.headline)
+//                Spacer()
+//                Text("+")
+//                    .padding()
+//                    .background(.yellow)
+//                    .foregroundStyle(.white)
+//                    .font(.headline)
+//                
+//            }
         }
-        .ignoresSafeArea()
     }
 }
