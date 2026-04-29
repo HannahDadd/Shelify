@@ -10,11 +10,12 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            VStack {
-                Image("day")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            }
+            RainView()
+//            VStack {
+//                Image("day")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//            }
             VStack {
                 Image("library-11")
                     .resizable()
