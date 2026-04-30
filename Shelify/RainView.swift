@@ -24,7 +24,6 @@ struct RainView: View {
             delay: Double.random(in: 0...2),
             duration: Double.random(in: 1...2),
             size: CGFloat.random(in: 5...8)
-//            size: CGFloat.random(in: 2...5)
         )
     }
     

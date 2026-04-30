@@ -17,7 +17,7 @@ struct ContentView: View {
 //                    .aspectRatio(contentMode: .fit)
 //            }
             VStack {
-                Image("library-11")
+                Image("library-20")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
             }
