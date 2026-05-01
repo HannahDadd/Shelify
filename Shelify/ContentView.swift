@@ -10,18 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
-            RainView()
-//            VStack {
-//                Image("day")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//            }
-            VStack {
-                Image("library-20")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            }
-            .ignoresSafeArea()
+            BackgroundView()
+            LibraryView()
 //            VStack(alignment: .trailing) {
 //                Text("Words written: 1000")
 //                    .padding()
