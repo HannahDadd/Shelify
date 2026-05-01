@@ -34,6 +34,6 @@ struct SprintView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.primary))
+        .background(Color(Color.primary))
     }
 }

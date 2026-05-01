@@ -19,7 +19,7 @@ struct LiveActivityView: View {
                 VStack(alignment: .leading) {
                     Text("Writing Sprint")
                         .font(.headline)
-                    Text(context.attributes.bookName)
+                    Text("Keep writing to grow your library")
                         .font(.subheadline)
                 }
                 Spacer()

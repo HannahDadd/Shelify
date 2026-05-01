@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-//import SprintLiveActivityExtension
+import SprintLiveActivityExtension
 
 struct SprintStack: View {
     @State private var isSprinting = false
