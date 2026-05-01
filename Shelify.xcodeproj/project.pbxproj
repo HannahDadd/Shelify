@@ -12,6 +12,10 @@
 		18BB77A52FA4E31C0098FF3D /* SprintLiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 18BB77932FA4E31B0098FF3D /* SprintLiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18BB77B32FA4E3A80098FF3D /* SprintLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */; };
 		18BB77B42FA4E3A80098FF3D /* SprintLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */; };
+		18BB77C12FA4EC870098FF3D /* Bellefair-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */; };
+		18BB77C22FA4EC870098FF3D /* Bellefair-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */; };
+		18BB77C42FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */; };
+		18BB77C52FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,8 @@
 		18BB77952FA4E31B0098FF3D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		18BB77972FA4E31B0098FF3D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprintLiveActivityAttributes.swift; sourceTree = "<group>"; };
+		18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bellefair-Regular.ttf"; sourceTree = "<group>"; };
+		18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -54,11 +60,21 @@
 			);
 			target = 18BB77922FA4E31B0098FF3D /* SprintLiveActivityExtension */;
 		};
+		18BB77CC2FA4ED840098FF3D /* Exceptions for "Shelify" folder in "Shelify" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 18BB76942F9C9EC80098FF3D /* Shelify */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		18BB76972F9C9EC80098FF3D /* Shelify */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				18BB77CC2FA4ED840098FF3D /* Exceptions for "Shelify" folder in "Shelify" target */,
+			);
 			path = Shelify;
 			sourceTree = "<group>";
 		};
@@ -124,6 +140,8 @@
 		18BB77B12FA4E38B0098FF3D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */,
+				18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */,
 				18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */,
 			);
 			path = Shared;
@@ -222,6 +240,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BB77C52FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf in Resources */,
+				18BB77C22FA4EC870098FF3D /* Bellefair-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BB77C42FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf in Resources */,
+				18BB77C12FA4EC870098FF3D /* Bellefair-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +415,7 @@
 				DEVELOPMENT_TEAM = 98LCCL7TBW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Shelify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,6 +452,7 @@
 				DEVELOPMENT_TEAM = 98LCCL7TBW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Shelify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -478,12 +502,16 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -510,11 +538,15 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

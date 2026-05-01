@@ -20,8 +20,8 @@ struct StartSprintCard: View {
                 .multilineTextAlignment(.leading)
         }
         .padding()
-        .frame(width: 150, height: 100)
-        .background(Color.cardBlue)
+        .frame(maxWidth: .infinity)
+        .background(Color.accent)
         .cornerRadius(8)
         .onTapGesture {
             action()

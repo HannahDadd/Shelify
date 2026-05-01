@@ -10,16 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @StateObject private var navigationManager = NavigationManager<HomePageRoute>()
     @State var path = NavigationPath([
-        HomePageRoute.sprint,
-        HomePageRoute.home
+        HomePageRoute.sprint
     ])
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationManager.path) {
             ZStack {
                 BackgroundView()
                 LibraryView()
-                MenuBar()
+                MenuBar(growAction: {
+                    navigationManager.navigate(to: .sprint)
+                })
             }
             .navigationDestination(for: HomePageRoute.self) { route in
                 switch route {
@@ -35,10 +36,6 @@ struct ContentView: View {
                                 navigationManager.navigate(to: .sprintOneHr)
                             }
                         })
-                case .home:
-                    SprintStack(time: 2400, action: {
-                        navigationManager.reset()
-                    })
                     
                 case .sprintTwentyMins:
                     SprintStack(time: 1200, action: {
@@ -60,7 +57,6 @@ struct ContentView: View {
 
 enum HomePageRoute {
     case sprint
-    case home
     
     case sprintTwentyMins
     case sprintFortyMins

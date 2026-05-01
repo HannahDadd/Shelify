@@ -13,10 +13,9 @@ struct SettingsView: View {
         NavigationView {
             List {
                 Section {
-                    NavigationLink("Daily reminder notification", destination: PrivacyPolicy())
+                    NavigationLink("Daily reminder notification", destination: NotificationCTA())
                 }
                 Section {
-                    NavigationLink("Daily reminder notification", destination: PrivacyPolicy())
                     NavigationLink("How Shelify Works", destination: HowItWorks())
                     NavigationLink("Our Other Apps", destination: OurOtherApps())
                 }
