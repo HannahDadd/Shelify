@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LibraryView: View {
-    @AppStorage("wordsWritten") var wordsWritten: Int = 0
+    @AppStorage(UserDefaultNames.wordsWritten.rawValue) var wordsWritten: Int = 0
     
     var body: some View {
         VStack {

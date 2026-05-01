@@ -6,14 +6,68 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		18BB77962FA4E31B0098FF3D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BB77952FA4E31B0098FF3D /* WidgetKit.framework */; };
+		18BB77982FA4E31B0098FF3D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BB77972FA4E31B0098FF3D /* SwiftUI.framework */; };
+		18BB77A52FA4E31C0098FF3D /* SprintLiveActivityExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 18BB77932FA4E31B0098FF3D /* SprintLiveActivityExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18BB77B32FA4E3A80098FF3D /* SprintLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */; };
+		18BB77B42FA4E3A80098FF3D /* SprintLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18BB77A32FA4E31C0098FF3D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18BB768D2F9C9EC80098FF3D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18BB77922FA4E31B0098FF3D;
+			remoteInfo = SprintLiveActivityExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18BB77AA2FA4E31C0098FF3D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				18BB77A52FA4E31C0098FF3D /* SprintLiveActivityExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		18BB76952F9C9EC80098FF3D /* Shelify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BB77932FA4E31B0098FF3D /* SprintLiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SprintLiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BB77952FA4E31B0098FF3D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		18BB77972FA4E31B0098FF3D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprintLiveActivityAttributes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		18BB77A62FA4E31C0098FF3D /* Exceptions for "SprintLiveActivity" folder in "SprintLiveActivityExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 18BB77922FA4E31B0098FF3D /* SprintLiveActivityExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		18BB76972F9C9EC80098FF3D /* Shelify */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Shelify;
+			sourceTree = "<group>";
+		};
+		18BB77992FA4E31B0098FF3D /* SprintLiveActivity */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				18BB77A62FA4E31C0098FF3D /* Exceptions for "SprintLiveActivity" folder in "SprintLiveActivityExtension" target */,
+			);
+			path = SprintLiveActivity;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +80,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18BB77902FA4E31B0098FF3D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BB77982FA4E31B0098FF3D /* SwiftUI.framework in Frameworks */,
+				18BB77962FA4E31B0098FF3D /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		18BB768C2F9C9EC80098FF3D = {
 			isa = PBXGroup;
 			children = (
+				18BB77B12FA4E38B0098FF3D /* Shared */,
 				18BB76972F9C9EC80098FF3D /* Shelify */,
+				18BB77992FA4E31B0098FF3D /* SprintLiveActivity */,
+				18BB77942FA4E31B0098FF3D /* Frameworks */,
 				18BB76962F9C9EC80098FF3D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +107,26 @@
 			isa = PBXGroup;
 			children = (
 				18BB76952F9C9EC80098FF3D /* Shelify.app */,
+				18BB77932FA4E31B0098FF3D /* SprintLiveActivityExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		18BB77942FA4E31B0098FF3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18BB77952FA4E31B0098FF3D /* WidgetKit.framework */,
+				18BB77972FA4E31B0098FF3D /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18BB77B12FA4E38B0098FF3D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +139,12 @@
 				18BB76912F9C9EC80098FF3D /* Sources */,
 				18BB76922F9C9EC80098FF3D /* Frameworks */,
 				18BB76932F9C9EC80098FF3D /* Resources */,
+				18BB77AA2FA4E31C0098FF3D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				18BB77A42FA4E31C0098FF3D /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				18BB76972F9C9EC80098FF3D /* Shelify */,
@@ -69,6 +155,28 @@
 			productName = Shelify;
 			productReference = 18BB76952F9C9EC80098FF3D /* Shelify.app */;
 			productType = "com.apple.product-type.application";
+		};
+		18BB77922FA4E31B0098FF3D /* SprintLiveActivityExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BB77A72FA4E31C0098FF3D /* Build configuration list for PBXNativeTarget "SprintLiveActivityExtension" */;
+			buildPhases = (
+				18BB778F2FA4E31B0098FF3D /* Sources */,
+				18BB77902FA4E31B0098FF3D /* Frameworks */,
+				18BB77912FA4E31B0098FF3D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				18BB77992FA4E31B0098FF3D /* SprintLiveActivity */,
+			);
+			name = SprintLiveActivityExtension;
+			packageProductDependencies = (
+			);
+			productName = SprintLiveActivityExtension;
+			productReference = 18BB77932FA4E31B0098FF3D /* SprintLiveActivityExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -82,6 +190,10 @@
 				TargetAttributes = {
 					18BB76942F9C9EC80098FF3D = {
 						CreatedOnToolsVersion = 26.4.1;
+					};
+					18BB77922FA4E31B0098FF3D = {
+						CreatedOnToolsVersion = 26.4.1;
+						LastSwiftMigration = 2640;
 					};
 				};
 			};
@@ -100,12 +212,20 @@
 			projectRoot = "";
 			targets = (
 				18BB76942F9C9EC80098FF3D /* Shelify */,
+				18BB77922FA4E31B0098FF3D /* SprintLiveActivityExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		18BB76932F9C9EC80098FF3D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BB77912FA4E31B0098FF3D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -119,10 +239,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BB77B32FA4E3A80098FF3D /* SprintLiveActivityAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BB778F2FA4E31B0098FF3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BB77B42FA4E3A80098FF3D /* SprintLiveActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18BB77A42FA4E31C0098FF3D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18BB77922FA4E31B0098FF3D /* SprintLiveActivityExtension */;
+			targetProxy = 18BB77A32FA4E31C0098FF3D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		18BB769E2F9C9ECB0098FF3D /* Debug */ = {
@@ -269,12 +406,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hannah.Shelify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -301,8 +442,75 @@
 				PRODUCT_BUNDLE_IDENTIFIER = hannah.Shelify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		18BB77A82FA4E31C0098FF3D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98LCCL7TBW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SprintLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SprintLiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hannah.Shelify.SprintLiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18BB77A92FA4E31C0098FF3D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 98LCCL7TBW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SprintLiveActivity/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SprintLiveActivity;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hannah.Shelify.SprintLiveActivity;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -327,6 +535,15 @@
 			buildConfigurations = (
 				18BB76A12F9C9ECB0098FF3D /* Debug */,
 				18BB76A22F9C9ECB0098FF3D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18BB77A72FA4E31C0098FF3D /* Build configuration list for PBXNativeTarget "SprintLiveActivityExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BB77A82FA4E31C0098FF3D /* Debug */,
+				18BB77A92FA4E31C0098FF3D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
