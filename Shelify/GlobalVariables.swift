@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum UserDefaultNames: String {
+    case wordsWritten = "wordsWritten"
+    case notification = "Notification"
+}
+
 public class GlobalVariables {
     
     public static let gillyGhostQuotes = [
