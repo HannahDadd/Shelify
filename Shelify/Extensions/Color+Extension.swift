@@ -9,5 +9,6 @@ import SwiftUI
 
 extension Color {
     static let primary: Color = .init("Primary")
+    //static let card: Color = .init("Card")
     //static let onPrimary: Color = .init("OnPrimary")
 }

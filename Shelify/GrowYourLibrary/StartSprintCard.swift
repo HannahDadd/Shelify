@@ -15,13 +15,13 @@ struct StartSprintCard: View {
         VStack(alignment: .leading) {
             Text(text)
                 .font(Font.custom("AbrilFatface-Regular", size: 28))
-                .foregroundColor(Color.onPrimary)
+                .foregroundColor(Color.white)
                 .bold()
                 .multilineTextAlignment(.leading)
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .background(Color.accent)
+        .background(Color.card)
         .cornerRadius(8)
         .onTapGesture {
             action()
