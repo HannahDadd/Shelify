@@ -12,14 +12,17 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                NavigationLink("Privacy Policy", destination: PrivacyPolicy())
-                NavigationLink("Daily reminder notification", destination: PrivacyPolicy())
-                Spacer()
-                NavigationLink("Privacy Policy", destination: PrivacyPolicy())
-                NavigationLink("Terms of Service", destination: TsAndCsView())
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("Want to contact us?")
-                    Text("Email: getitwrite@gmail.com")
+                Section {
+                    NavigationLink("Daily reminder notification", destination: PrivacyPolicy())
+                }
+                Section {
+                    NavigationLink("Daily reminder notification", destination: PrivacyPolicy())
+                    NavigationLink("How Shelify Works", destination: HowItWorks())
+                    NavigationLink("Our Other Apps", destination: OurOtherApps())
+                }
+                Section {
+                    NavigationLink("Privacy Policy", destination: PrivacyPolicy())
+                    NavigationLink("Terms of Service", destination: TsAndCsView())
                 }
             }
             .listStyle(.insetGrouped)

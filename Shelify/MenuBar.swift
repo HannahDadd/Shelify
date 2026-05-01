@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MenuBar: View {
+    @State var showSheet = false
     @State private var showButtons: Bool = false
     
     var body: some View {
@@ -24,6 +25,9 @@ struct MenuBar: View {
                             .resizable()
                             .frame(width: 100, height: 100)
                             .padding()
+                            .onTapGesture {
+                                showSheet = true
+                            }
                     }
                     Image("menuButton")
                         .resizable()
@@ -36,5 +40,8 @@ struct MenuBar: View {
                 Spacer()
             }
         }
+        .sheet(isPresented: $showSheet, content: {
+            SettingsView()
+        })
     }
 }
