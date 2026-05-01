@@ -12,20 +12,7 @@ struct ContentView: View {
         ZStack {
             BackgroundView()
             LibraryView()
-//            VStack(alignment: .trailing) {
-//                Text("Words written: 1000")
-//                    .padding()
-//                    .background(.yellow)
-//                    .foregroundStyle(.white)
-//                    .font(.headline)
-//                Spacer()
-//                Text("+")
-//                    .padding()
-//                    .background(.yellow)
-//                    .foregroundStyle(.white)
-//                    .font(.headline)
-//                
-//            }
+            MenuBar()
         }
     }
 }
