@@ -78,20 +78,17 @@ struct GhostView: View {
     }
     
     func animateGhost(at index: Int, screenSize: CGSize) {
-        guard index < ghostsOnScreen.count else { return }
 
         let moveDuration = Double.random(in: 4...10)
         let nextPosition = randomPoint(screenSize: screenSize)
-            
-        withAnimation(.linear(duration: moveDuration)) {
-            ghostsOnScreen[index].position = nextPosition
-        }
-
         let pauseChance = Bool.random()
+        let delay = moveDuration + (pauseChance ? Double.random(in: 1...3) : 0)
 
-        let nextStepDelay = moveDuration + (pauseChance ? Double.random(in: 1...3) : 0)
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + nextStepDelay) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            guard index < ghostsOnScreen.count else { return }
+            withAnimation(.linear(duration: moveDuration)) {
+                ghostsOnScreen[index].position = nextPosition
+            }
             animateGhost(at: index, screenSize: screenSize)
         }
     }
