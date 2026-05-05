@@ -18,10 +18,10 @@ struct ContentView: View {
             ZStack {
                 BackgroundView()
                 LibraryView()
+                GhostView()
                 MenuBar(growAction: {
                     navigationManager.navigate(to: .sprint)
                 })
-                GhostView()
             }
             .navigationDestination(for: HomePageRoute.self) { route in
                 switch route {

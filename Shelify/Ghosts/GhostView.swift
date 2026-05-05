@@ -8,41 +8,54 @@
 import SwiftUI
 
 struct GhostView: View {
-    @State private var ghosts: [Ghost] = []
+    @State private var ghostsOnScreen: [GhostWithPosition] = []
     let screenSize = UIScreen.main.bounds.size
-    let ghostTypes = [
-        "ghostly": GlobalVariables.ghostlyGhostQuotes,
-        "sid": GlobalVariables.sidGhostQuotes,
-        "margerie": GlobalVariables.margerieGhostQuotes,
-        "gilly": GlobalVariables.gillyGhostQuotes,
-        "gramp": GlobalVariables.grampGhostQuotes
+    let ghosts = [
+        Ghost(imageName: "ghostly", ghostName: "ghostly", comments: GlobalVariables.ghostlyGhostQuotes, size: 80),
+        Ghost(imageName: "sid", ghostName: "sid", comments: GlobalVariables.sidGhostQuotes, size: 70),
+        Ghost(imageName: "margerie", ghostName: "margerie", comments: GlobalVariables.sidGhostQuotes, size: 75),
+        Ghost(imageName: "gilly", ghostName: "gilly", comments: GlobalVariables.sidGhostQuotes, size: 60),
+        Ghost(imageName: "gramp", ghostName: "gramp", comments: GlobalVariables.sidGhostQuotes, size: 85),
+        Ghost(imageName: "paula", ghostName: "paula", comments: GlobalVariables.paulineGhostQuotes, size: 70)
     ]
 
     var body: some View {
         VStack {
-            ForEach(ghosts) { ghost in
-                Image(ghost.imageName)
+            ForEach(ghostsOnScreen) { ghost in
+                Image(ghost.ghost.imageName)
                     .resizable()
-                    .frame(width: 60, height: 60)
+                    .frame(height: ghost.ghost.size)
                     .position(ghost.position)
-                    .opacity(ghost.isVisible ? 1 : 0)
+                    .opacity(ghost.isVisible ? 0.4 : 0)
                     .animation(.easeInOut(duration: 1), value: ghost.position)
             }
         }
         .onAppear {
-            spawnGhost()
+            startSpawningGhosts()
         }
+    }
+    
+    func startSpawningGhosts() {
+        func spawnLoop() {
+            let delay = Double.random(in: 1...5)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+                spawnGhost()
+                spawnLoop()
+            }
+        }
+
+        spawnLoop()
     }
     
     func spawnGhost() {
         let startPosition = randomPoint()
-        let ghostType = ghostTypes.randomElement()
+        let ghostType = ghosts.randomElement()!
 
-        let ghost = Ghost(position: startPosition, imageName: ghostType?.key ?? "", comments: ghostType?.value ?? [])
-        if ghosts.contains(where: { $0.imageName == ghost.imageName }) { return }
-        ghosts.append(ghost)
+        let ghost = GhostWithPosition(position: startPosition, ghost: ghostType)
+        ghostsOnScreen.append(ghost)
         
-        guard let index = ghosts.firstIndex(where: { $0.id == ghost.id }) else { return }
+        guard let index = ghostsOnScreen.firstIndex(where: { $0.id == ghost.id }) else { return }
         animateGhost(at: index)
 
         // Remove after some time
@@ -50,11 +63,11 @@ struct GhostView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + lifetime) {
             if index < ghosts.count {
                 withAnimation {
-                    ghosts[index].isVisible = false
+                    ghostsOnScreen[index].isVisible = false
                 }
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    ghosts.removeAll { $0.id == ghost.id }
+                    ghostsOnScreen.removeAll { $0.id == ghost.id }
                 }
             }
         }
@@ -63,11 +76,11 @@ struct GhostView: View {
     func animateGhost(at index: Int) {
         guard index < ghosts.count else { return }
 
-        let moveDuration = Double.random(in: 2...6)
+        let moveDuration = Double.random(in: 4...10)
         let nextPosition = randomPoint()
 
         withAnimation(.linear(duration: moveDuration)) {
-            ghosts[index].position = nextPosition
+            ghostsOnScreen[index].position = nextPosition
         }
 
         let pauseChance = Bool.random()
