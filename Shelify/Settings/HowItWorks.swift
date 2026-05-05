@@ -12,7 +12,7 @@ struct HowItWorks: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 30) {
-                Text("PRIVACY POLICY")
+                Text("How does shelfify work?")
                     .font(Font.custom("AbrilFatface-Regular", size: 34))
                 Text("""
 """)

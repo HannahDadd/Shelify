@@ -20,6 +20,7 @@ struct LibraryView: View {
     }
     
     func getImageName() -> String {
+        return "library-11"
         for i in 1...20 {
             if wordsWritten < (i * 1000) {
                 return "library-\(i)"
