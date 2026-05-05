@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GhostView: View {
     @State private var ghostsOnScreen: [GhostWithPosition] = []
-    let screenSize = UIScreen.main.bounds.size
     let ghosts = [
         Ghost(imageName: "ghostly", ghostName: "ghostly", comments: GlobalVariables.ghostlyGhostQuotes, size: 80),
         Ghost(imageName: "sid", ghostName: "sid", comments: GlobalVariables.sidGhostQuotes, size: 70),
@@ -20,36 +19,39 @@ struct GhostView: View {
     ]
 
     var body: some View {
-        VStack {
-            ForEach(ghostsOnScreen) { ghost in
-                Image(ghost.ghost.imageName)
-                    .resizable()
-                    .frame(width: ghost.ghost.size, height: ghost.ghost.size)
-                    .position(ghost.position)
-                    .opacity(ghost.isVisible ? 0.4 : 0)
-                    .animation(.easeInOut(duration: 1), value: ghost.position)
+        GeometryReader { geo in
+            VStack {
+                ForEach(ghostsOnScreen) { ghost in
+                    Image(ghost.ghost.imageName)
+                        .resizable()
+                        .frame(width: ghost.ghost.size, height: ghost.ghost.size)
+                        .position(ghost.position)
+                        .opacity(ghost.isVisible ? 0.4 : 0)
+                        .animation(.easeInOut(duration: 1), value: ghost.position)
+                        .animation(.easeInOut(duration: 1), value: ghost.isVisible)
+                }
             }
-        }
-        .onAppear {
-            startSpawningGhosts()
+            .onAppear {
+                startSpawningGhosts(screenSize: geo.size)
+            }
         }
     }
     
-    func startSpawningGhosts() {
-        func spawnLoop() {
+    func startSpawningGhosts(screenSize: CGSize) {
+        func spawnLoop(screenSize: CGSize) {
             let delay = Double.random(in: 1...5)
 
             DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                spawnGhost()
-                spawnLoop()
+                spawnGhost(screenSize: screenSize)
+                spawnLoop(screenSize: screenSize)
             }
         }
 
-        spawnLoop()
+        spawnLoop(screenSize: screenSize)
     }
     
-    func spawnGhost() {
-        let startPosition = randomPoint()
+    func spawnGhost(screenSize: CGSize) {
+        let startPosition = randomPoint(screenSize: screenSize)
         let ghostType = ghosts.randomElement()!
 
         let ghost = GhostWithPosition(position: startPosition, ghost: ghostType)
@@ -58,7 +60,7 @@ struct GhostView: View {
         ghostsOnScreen.append(ghost)
         
         guard let index = ghostsOnScreen.firstIndex(where: { $0.id == ghost.id }) else { return }
-        animateGhost(at: index)
+        animateGhost(at: index, screenSize: screenSize)
 
         // Remove after some time
         let lifetime = Double.random(in: 8...20)
@@ -75,12 +77,12 @@ struct GhostView: View {
         }
     }
     
-    func animateGhost(at index: Int) {
+    func animateGhost(at index: Int, screenSize: CGSize) {
         guard index < ghostsOnScreen.count else { return }
 
         let moveDuration = Double.random(in: 4...10)
-        let nextPosition = randomPoint()
-
+        let nextPosition = randomPoint(screenSize: screenSize)
+            
         withAnimation(.linear(duration: moveDuration)) {
             ghostsOnScreen[index].position = nextPosition
         }
@@ -90,11 +92,11 @@ struct GhostView: View {
         let nextStepDelay = moveDuration + (pauseChance ? Double.random(in: 1...3) : 0)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + nextStepDelay) {
-            animateGhost(at: index)
+            animateGhost(at: index, screenSize: screenSize)
         }
     }
     
-    func randomPoint() -> CGPoint {
+    func randomPoint(screenSize: CGSize) -> CGPoint {
         CGPoint(
             x: CGFloat.random(in: 0...screenSize.width),
             y: CGFloat.random(in: 0...screenSize.height)
