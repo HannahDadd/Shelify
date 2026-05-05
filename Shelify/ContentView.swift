@@ -21,6 +21,7 @@ struct ContentView: View {
                 MenuBar(growAction: {
                     navigationManager.navigate(to: .sprint)
                 })
+                GhostView()
             }
             .navigationDestination(for: HomePageRoute.self) { route in
                 switch route {
