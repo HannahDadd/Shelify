@@ -24,7 +24,7 @@ struct GhostView: View {
             ForEach(ghostsOnScreen) { ghost in
                 Image(ghost.ghost.imageName)
                     .resizable()
-                    .frame(height: ghost.ghost.size)
+                    .frame(width: ghost.ghost.size, height: ghost.ghost.size)
                     .position(ghost.position)
                     .opacity(ghost.isVisible ? 0.4 : 0)
                     .animation(.easeInOut(duration: 1), value: ghost.position)
@@ -53,6 +53,8 @@ struct GhostView: View {
         let ghostType = ghosts.randomElement()!
 
         let ghost = GhostWithPosition(position: startPosition, ghost: ghostType)
+        
+        if ghostsOnScreen.contains(where: { $0.ghost.imageName == ghost.ghost.imageName }) { return }
         ghostsOnScreen.append(ghost)
         
         guard let index = ghostsOnScreen.firstIndex(where: { $0.id == ghost.id }) else { return }
@@ -61,7 +63,7 @@ struct GhostView: View {
         // Remove after some time
         let lifetime = Double.random(in: 8...20)
         DispatchQueue.main.asyncAfter(deadline: .now() + lifetime) {
-            if index < ghosts.count {
+            if index < ghostsOnScreen.count {
                 withAnimation {
                     ghostsOnScreen[index].isVisible = false
                 }
@@ -74,7 +76,7 @@ struct GhostView: View {
     }
     
     func animateGhost(at index: Int) {
-        guard index < ghosts.count else { return }
+        guard index < ghostsOnScreen.count else { return }
 
         let moveDuration = Double.random(in: 4...10)
         let nextPosition = randomPoint()
