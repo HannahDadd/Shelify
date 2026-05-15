@@ -71,7 +71,6 @@ public class GlobalVariables {
         "Yo bro!",
         "Rad man.",
         "I'm like so dead inside... and outside... so... yeah.",
-        "Got any books on like how much deoderant I should put on before my first date? I'm thinking a whole bottle, but maybe that's too little.",
         "If you're like a writer, does that mean you like write?",
         "Do you actually write though, or is that just like what you say you do?",
         "I tried to write something once, but it's a lot of work so I guess I'm kind of impressed you're still doing it.",
@@ -105,7 +104,6 @@ public class GlobalVariables {
         "Welcome to the village, love.",
         "It's always a pleasure to run into you!",
         "You've really turned this place around.",
-        "I went to the advanced mathematics sections just the other day- only for a browse you see- but Paulina had cleared it all out. That girl does love her reading.",
         "Sometimes I hear singing, but I don't see that little girl ghost. It's nice to know she's there I suppose.",
         "That old fuddy duddy. He can be so peculiar.",
         "All this library's missing is your book!",
@@ -125,7 +123,6 @@ public class GlobalVariables {
         "So what theorem is your favourite?",
         "I just can't decide if I like algebra or geography more.",
         "This library should have more books. Like way more.",
-        "Sometimes I finish a maths exercise in pencil so that I can rub it out and do it all over again.",
         "So my eternal resting place is a library. That kind of figures.",
         "Some ghost haunt graveyards, but I was always gonna end up where the books are.",
         "You're writing something? That's really cool.",
@@ -134,25 +131,19 @@ public class GlobalVariables {
     ]
     
     public static let ghostlyGhostQuotes = [
-        "With great writers their always comes great diligence. I see great diligence in you.",
         "Everybody has an idea, but you? You're going to write it. I can tell.",
         "I am partial to a little reading myself.",
-        "The hardest part of writing a book is always having patience.",
         "You, my friend, will write great things.",
-        "Prophecies are really just poem spoken with confidence.",
         "Write well, little one, for I want to read it.",
         "Keep going. You've got this.",
         "There's always more than one way of doing things, if you really think about it.",
         "We're rarely trapped when we have ideas.",
         "A life without books is hardly a life at all.",
-        "Life is like a storybook. Every time you turn a page you find something new, and sometimes you have the unfortunate reality that there is a grit in the margin, but luckily it all just dusts away.",
-        "It always takes about 200 odd pages to reach the end in most novels. If you're only 100 pages into your journey, you've barely just begun.",
         "I do like a chamomile tea.",
         "Stay awhile, won't you? I think you belong here.",
         "There's something about you that makes me think you're different... special, almost.",
         "Don't fret the day away talking to an old man like me.",
-        "The hat? It's a style choice nothing more.",
-        "Marjorie keeps giving me home-made scones. Absolutely splendid but a trifle bad for the old constitution."
+        "The hat? It's a style choice nothing more."
     ]
     
     public static let inspiringQuotes = [

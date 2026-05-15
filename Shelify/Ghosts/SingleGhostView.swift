@@ -36,7 +36,7 @@ struct SingleGhostView: View {
     
     func spawnGhost() async {
         while true {
-            try? await Task.sleep(for: .seconds(Double.random(in: 0...240)))
+            try? await Task.sleep(for: .seconds(Double.random(in: 0...12)))
             position = randomPoint()
             await MainActor.run {
                 isVisible = true
