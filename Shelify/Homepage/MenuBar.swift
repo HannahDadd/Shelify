@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MenuBar: View {
     @State var showSettingsSheet = false
-    @State var showNotificationsSheet = false
     @State private var showButtons: Bool = false
     let growAction: () -> Void
     let buttonlength = CGFloat(75)
@@ -25,12 +24,6 @@ struct MenuBar: View {
                             .frame(width: buttonlength, height: buttonlength)
                             .onTapGesture {
                                 growAction()
-                            }
-                        Image("bellButton")
-                            .resizable()
-                            .frame(width: buttonlength, height: buttonlength)
-                            .onTapGesture {
-                                showNotificationsSheet = true
                             }
                         Image("settingsButton")
                             .resizable()
@@ -52,9 +45,6 @@ struct MenuBar: View {
         }
         .sheet(isPresented: $showSettingsSheet, content: {
             SettingsView()
-        })
-        .sheet(isPresented: $showNotificationsSheet, content: {
-            NotificationCTA()
         })
     }
 }

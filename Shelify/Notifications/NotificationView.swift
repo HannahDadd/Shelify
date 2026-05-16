@@ -16,15 +16,17 @@ struct NotificationCTA: View {
     var body: some View {
         VStack {
             if notif {
-                Text("You have a daily notification set! Edit it?")
-                    .onTapGesture {
+                VStack {
+                    PopupPromo(title: "You have a daily notification set!", subtitle: "", action: {
                         showEditSheet = true
-                    }
+                    })
+                }
             } else {
-                Text("Set a daily notification?")
-                    .onTapGesture {
+                VStack {
+                    PopupPromo(title: "Lets get that book written", subtitle: "Set a daily notification", action: {
                         showSetSheet = true
-                    }
+                    })
+                }
             }
         }
         .onAppear {
@@ -98,4 +100,3 @@ struct NotificationCTA: View {
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 }
-
