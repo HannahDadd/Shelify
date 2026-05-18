@@ -31,8 +31,7 @@ struct PopupPromo: View {
         }
         .padding()
         .frame(maxWidth: .infinity)
-        .frame(height: 100)
-        .background(Color.primary)
+        .background(Color.card)
         .cornerRadius(8)
         .onTapGesture { action() }
         .shadow(radius: 5)

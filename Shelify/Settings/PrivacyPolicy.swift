@@ -13,7 +13,7 @@ struct PrivacyPolicy: View {
         ScrollView {
             VStack(spacing: 30) {
                 Text("PRIVACY POLICY")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34))
+                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
                 Text("""
  Effective Date: 17/02/2026
  App Name: Get It Write
@@ -52,7 +52,7 @@ struct PrivacyPolicy: View {
  For privacy questions or requests:
  getitwrite@gmail.com
 """)
-                .font(Font.custom("Bellefair-Regular", size: 18))
+                .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
                 
             }
             .padding()

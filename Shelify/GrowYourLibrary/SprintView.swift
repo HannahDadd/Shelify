@@ -17,12 +17,12 @@ struct SprintView: View {
             Spacer()
             Text("\(GlobalVariables.inspiringQuotes[quoteNumber])")
                 .foregroundColor(Color.white)
-                .font(Font.custom("Bellefair-Regular", size: 28))
+                .font(Font.custom("Bellefair-Regular", size: 28, relativeTo: .title))
                 .multilineTextAlignment(.center)
             Spacer()
             Text("Sprint Time Remianing:")
                 .foregroundStyle(Color.white)
-                .font(Font.custom("Bellefair-Regular", size: 18))
+                .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
             CountdownTimer(timeRemaining: time, endState: {
                 endState()
             }, textSize: 120, timeRemainingAction: { timeRemaining in

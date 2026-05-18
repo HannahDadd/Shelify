@@ -39,7 +39,7 @@ struct NotificationCTA: View {
         .sheet(isPresented: $showEditSheet) {
             VStack(alignment: .center, spacing: 48) {
                 Text("Edit Daily Notification")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34))
+                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
                 VStack(alignment: .leading) {
                     Text("Set new time of daily notification:")
                         .multilineTextAlignment(.leading)
@@ -63,7 +63,7 @@ struct NotificationCTA: View {
         .sheet(isPresented: $showSetSheet) {
             VStack(alignment: .center, spacing: 48) {
                 Text("Schedule Daily Notification")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34))
+                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
                 VStack(alignment: .leading) {
                     Text("What time do you want the daily notification?")
                         .multilineTextAlignment(.leading)

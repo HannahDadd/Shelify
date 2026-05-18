@@ -41,7 +41,7 @@ struct CountdownTimerDarkBackground: View {
     
     var body: some View {
         Text(String(format: "%d:%02d", timeRemaining / 60, timeRemaining % 60))
-            .font(Font.custom("AbrilFatface-Regular", size: textSize))
+            .font(Font.custom("AbrilFatface-Regular", size: textSize, relativeTo: .title))
             .onReceive(timer) { _ in
                 if timeRemaining > 0 {
                     timeRemainingAction()

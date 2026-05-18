@@ -31,7 +31,7 @@ struct GhostView: View {
                     Text(quote)
                         .containerShape(.rect)
                         .foregroundStyle(.black)
-                        .font(Font.custom("Bellefair-Regular", size: 18))
+                        .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
                         .multilineTextAlignment(.center)
                         .padding()
                         .background(.white)

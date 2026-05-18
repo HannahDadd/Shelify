@@ -16,21 +16,21 @@ struct OurOtherApps: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Text("Download Writing Games")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34))
+                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
                     .multilineTextAlignment(.leading)
                 Text("""
                     You look like a really hard-working writer. Fancy taking a break while still working on those writing skills?
                     
                     Writing Games helps you relax and sharpens your writing skills. With games that will teach you new words, practice your editing skills, and daily writing prompts, it's the perfect place for any word nerd to wind down. Whether you want to resolve a conflict or add a zesty new voice to some bland as anything dialogue, Writing Games is the place for you.
                     """)
-                    .font(Font.custom("Bellefair-Regular", size: 18))
+                    .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
                     .multilineTextAlignment(.leading)
                 StretchedButton(text: "Download now", action: {})
                 Image("GetItWritePromo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 Text("Download Get it Write")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34))
+                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
                     .multilineTextAlignment(.leading)
                 Text("""
     Get it Write will gamify your creative writing and get those words written.
@@ -39,7 +39,7 @@ struct OurOtherApps: View {
 
     Whether you’re drafting your first novel in New York, polishing poetry in London, or journaling in the Highlands, the world is full of storytellers, they just need a place to start. Download Get it Write today, start your first sprint, and get those words written.
     """)
-                    .font(Font.custom("Bellefair-Regular", size: 18))
+                    .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
                     .multilineTextAlignment(.leading)
             }
             .padding()

@@ -15,7 +15,7 @@ struct SprintEndPage: View {
     var body: some View {
         VStack(spacing: 30) {
             Text("Sprint Finished!")
-                .font(Font.custom("AbrilFatface-Regular", size: 34))
+                .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
                 .padding(.bottom, 16)
             NumberSection(text: "How many words did you write?", response: $endWordCount)
             Spacer()

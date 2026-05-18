@@ -22,6 +22,7 @@ struct MenuBar: View {
                         Image("growButton")
                             .resizable()
                             .frame(width: buttonlength, height: buttonlength)
+                            .accessibilityLabel("Grow you library")
                             .onTapGesture {
                                 growAction()
                             }

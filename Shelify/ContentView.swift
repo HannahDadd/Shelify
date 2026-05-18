@@ -17,8 +17,11 @@ struct ContentView: View {
         NavigationStack(path: $navigationManager.path) {
             ZStack {
                 BackgroundView()
+                    .accessibilityHidden(true)
                 LibraryView()
+                    .accessibilityHidden(true)
                 GhostView()
+                    .accessibilityHidden(true)
                 MenuBar(growAction: {
                     navigationManager.navigate(to: .sprint)
                 })
