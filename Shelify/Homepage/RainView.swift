@@ -16,6 +16,7 @@ struct RainDrop: Identifiable {
 }
 
 struct RainView: View {
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
     @State private var animate = false
     
     let drops: [RainDrop] = (0..<100).map { _ in
@@ -35,18 +36,20 @@ struct RainView: View {
                     .aspectRatio(contentMode: .fit)
             }
             
-            ForEach(drops) { drop in
-                Capsule()
-                    .fill(Color.gray.opacity(0.7))
-                    .frame(width: drop.size, height: drop.size)
-                    .position(x: drop.xPosition, y: animate ? UIScreen.main.bounds.height : -10)
-                    .opacity(animate ? 0 : 1)
-                    .animation(
-                        Animation.linear(duration: drop.duration)
-                            .delay(drop.delay)
-                            .repeatForever(autoreverses: false),
-                        value: animate
-                    )
+            if !reduceMotion {
+                ForEach(drops) { drop in
+                    Capsule()
+                        .fill(Color.gray.opacity(0.7))
+                        .frame(width: drop.size, height: drop.size)
+                        .position(x: drop.xPosition, y: animate ? UIScreen.main.bounds.height : -10)
+                        .opacity(animate ? 0 : 1)
+                        .animation(
+                            Animation.linear(duration: drop.duration)
+                                .delay(drop.delay)
+                                .repeatForever(autoreverses: false),
+                            value: animate
+                        )
+                }
             }
         }
         .onAppear {

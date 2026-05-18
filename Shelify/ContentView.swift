@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
     @StateObject private var navigationManager = NavigationManager<HomePageRoute>()
     @State var path = NavigationPath([
         HomePageRoute.sprint
@@ -20,8 +21,10 @@ struct ContentView: View {
                     .accessibilityHidden(true)
                 LibraryView()
                     .accessibilityHidden(true)
-                GhostView()
-                    .accessibilityHidden(true)
+                if !reduceMotion {
+                    GhostView()
+                        .accessibilityHidden(true)
+                }
                 MenuBar(growAction: {
                     navigationManager.navigate(to: .sprint)
                 })
