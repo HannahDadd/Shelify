@@ -13,27 +13,30 @@ struct PopupPromo: View {
     var action: () -> Void
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .multilineTextAlignment(.leading)
-                .font(.headline)
-                .foregroundColor(.white)
-            Spacer()
-            Text(subtitle)
-                .multilineTextAlignment(.leading)
-                .lineLimit(2)
-                .font(.subheadline)
-                .foregroundColor(.white)
-            VStack {
-                EmptyView()
+        Button {
+            action()
+        } label: {
+            VStack(alignment: .leading) {
+                Text(title)
+                    .multilineTextAlignment(.leading)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                Spacer()
+                Text(subtitle)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                VStack {
+                    EmptyView()
+                }
+                .frame(maxWidth: .infinity)
             }
+            .padding()
             .frame(maxWidth: .infinity)
+            .background(Color.card)
+            .cornerRadius(8)
+            .shadow(radius: 5)
         }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(Color.card)
-        .cornerRadius(8)
-        .onTapGesture { action() }
-        .shadow(radius: 5)
     }
 }

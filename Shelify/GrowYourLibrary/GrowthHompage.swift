@@ -20,9 +20,9 @@ struct GrowthHompage: View {
                 VStack {
                     Text("Start a focused writing sprint:")
                         .textCase(.uppercase)
-                    StartSprintCard(action: { sprintTapAction(.twentyMins) }, text: "20 mins")
-                    StartSprintCard(action: { sprintTapAction(.fortyMins) }, text: "40 mins")
-                    StartSprintCard(action: { sprintTapAction(.oneHr) }, text: "1 hour")
+                    StartSprintCard(action: { sprintTapAction(.twentyMins) }, text: "20 mins", accessibilityString: "Start a 20 minute sprint")
+                    StartSprintCard(action: { sprintTapAction(.fortyMins) }, text: "40 mins", accessibilityString: "Start a 40 minute sprint")
+                    StartSprintCard(action: { sprintTapAction(.oneHr) }, text: "1 hour", accessibilityString: "Start a 1 hour sprint")
                 }
                 NotificationCTA()
                 Spacer()

@@ -19,26 +19,31 @@ struct MenuBar: View {
             HStack {
                 VStack(spacing: 16) {
                     if showButtons {
-                        Image("growButton")
-                            .resizable()
-                            .frame(width: buttonlength, height: buttonlength)
-                            .accessibilityLabel("Grow you library")
-                            .onTapGesture {
-                                growAction()
-                            }
-                        Image("settingsButton")
-                            .resizable()
-                            .frame(width: buttonlength, height: buttonlength)
-                            .onTapGesture {
-                                showSettingsSheet = true
-                            }
-                    }
-                    Image("menuButton")
-                        .resizable()
-                        .frame(width: buttonlength, height: buttonlength)
-                        .onTapGesture {
-                            showButtons.toggle()
+                        Button {
+                            growAction()
+                        } label: {
+                            Image("growButton")
+                                .resizable()
+                                .frame(width: buttonlength, height: buttonlength)
+                                .accessibilityLabel("Grow you library")
                         }
+                        Button {
+                            showSettingsSheet = true
+                        } label: {
+                            Image("settingsButton")
+                                .resizable()
+                                .frame(width: buttonlength, height: buttonlength)
+                                .accessibilityLabel("Settings")
+                        }
+                    }
+                    Button {
+                        showButtons.toggle()
+                    } label: {
+                        Image("menuButton")
+                            .resizable()
+                            .frame(width: buttonlength, height: buttonlength)
+                            .accessibilityLabel("Menu")
+                    }
                 }
                 .padding()
                 Spacer()
