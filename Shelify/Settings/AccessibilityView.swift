@@ -12,12 +12,25 @@ struct AccessibilityView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: 30) {
-                Text("What accessibility does Shelfify support?")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
+                Text("Accessibility features actively supported")
+                    .font(Font.custom("AbrilFatface-Regular", size: 24, relativeTo: .title))
                 Text("""
+- VoiceOver
+- Voice Control
+- Larger Text
+- Dark Interface
+- Differentiate Without Color Alone
+- Sufficient Contrast
+- Reduced Motion
 """)
                 .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
-                
+                Text("Accessibility features not applicable")
+                    .font(Font.custom("AbrilFatface-Regular", size: 24, relativeTo: .title))
+                Text("""
+- Captions
+- Audio Descriptions
+""")
+                .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
             }
             .padding()
         }

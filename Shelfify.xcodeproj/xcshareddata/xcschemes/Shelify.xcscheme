@@ -18,7 +18,7 @@
                BlueprintIdentifier = "18BB76942F9C9EC80098FF3D"
                BuildableName = "Shelify.app"
                BlueprintName = "Shelify"
-               ReferencedContainer = "container:Shelify.xcodeproj">
+               ReferencedContainer = "container:Shelfify.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -48,7 +48,7 @@
             BlueprintIdentifier = "18BB76942F9C9EC80098FF3D"
             BuildableName = "Shelify.app"
             BlueprintName = "Shelify"
-            ReferencedContainer = "container:Shelify.xcodeproj">
+            ReferencedContainer = "container:Shelfify.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -65,7 +65,7 @@
             BlueprintIdentifier = "18BB76942F9C9EC80098FF3D"
             BuildableName = "Shelify.app"
             BlueprintName = "Shelify"
-            ReferencedContainer = "container:Shelify.xcodeproj">
+            ReferencedContainer = "container:Shelfify.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

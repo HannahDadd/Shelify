@@ -215,7 +215,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 18BB76902F9C9EC80098FF3D /* Build configuration list for PBXProject "Shelify" */;
+			buildConfigurationList = 18BB76902F9C9EC80098FF3D /* Build configuration list for PBXProject "Shelfify" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -553,7 +553,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18BB76902F9C9EC80098FF3D /* Build configuration list for PBXProject "Shelify" */ = {
+		18BB76902F9C9EC80098FF3D /* Build configuration list for PBXProject "Shelfify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18BB769E2F9C9ECB0098FF3D /* Debug */,

@@ -19,7 +19,7 @@
                BlueprintIdentifier = "18BB77922FA4E31B0098FF3D"
                BuildableName = "SprintLiveActivityExtension.appex"
                BlueprintName = "SprintLiveActivityExtension"
-               ReferencedContainer = "container:Shelify.xcodeproj">
+               ReferencedContainer = "container:Shelfify.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -33,7 +33,7 @@
                BlueprintIdentifier = "18BB76942F9C9EC80098FF3D"
                BuildableName = "Shelify.app"
                BlueprintName = "Shelify"
-               ReferencedContainer = "container:Shelify.xcodeproj">
+               ReferencedContainer = "container:Shelfify.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -65,7 +65,7 @@
             BlueprintIdentifier = "18BB76942F9C9EC80098FF3D"
             BuildableName = "Shelify.app"
             BlueprintName = "Shelify"
-            ReferencedContainer = "container:Shelify.xcodeproj">
+            ReferencedContainer = "container:Shelfify.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -101,7 +101,7 @@
             BlueprintIdentifier = "18BB76942F9C9EC80098FF3D"
             BuildableName = "Shelify.app"
             BlueprintName = "Shelify"
-            ReferencedContainer = "container:Shelify.xcodeproj">
+            ReferencedContainer = "container:Shelfify.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
