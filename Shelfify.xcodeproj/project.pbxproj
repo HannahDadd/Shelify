@@ -43,7 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		18BB76952F9C9EC80098FF3D /* Shelify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelify.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BB76952F9C9EC80098FF3D /* Shelfify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelfify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BB77932FA4E31B0098FF3D /* SprintLiveActivityExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SprintLiveActivityExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BB77952FA4E31B0098FF3D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		18BB77972FA4E31B0098FF3D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -60,12 +60,12 @@
 			);
 			target = 18BB77922FA4E31B0098FF3D /* SprintLiveActivityExtension */;
 		};
-		18BB77CC2FA4ED840098FF3D /* Exceptions for "Shelify" folder in "Shelify" target */ = {
+		18BB77CC2FA4ED840098FF3D /* Exceptions for "Shelify" folder in "Shelfify" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 18BB76942F9C9EC80098FF3D /* Shelify */;
+			target = 18BB76942F9C9EC80098FF3D /* Shelfify */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -73,7 +73,7 @@
 		18BB76972F9C9EC80098FF3D /* Shelify */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				18BB77CC2FA4ED840098FF3D /* Exceptions for "Shelify" folder in "Shelify" target */,
+				18BB77CC2FA4ED840098FF3D /* Exceptions for "Shelify" folder in "Shelfify" target */,
 			);
 			path = Shelify;
 			sourceTree = "<group>";
@@ -122,7 +122,7 @@
 		18BB76962F9C9EC80098FF3D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18BB76952F9C9EC80098FF3D /* Shelify.app */,
+				18BB76952F9C9EC80098FF3D /* Shelfify.app */,
 				18BB77932FA4E31B0098FF3D /* SprintLiveActivityExtension.appex */,
 			);
 			name = Products;
@@ -150,9 +150,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18BB76942F9C9EC80098FF3D /* Shelify */ = {
+		18BB76942F9C9EC80098FF3D /* Shelfify */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18BB76A02F9C9ECB0098FF3D /* Build configuration list for PBXNativeTarget "Shelify" */;
+			buildConfigurationList = 18BB76A02F9C9ECB0098FF3D /* Build configuration list for PBXNativeTarget "Shelfify" */;
 			buildPhases = (
 				18BB76912F9C9EC80098FF3D /* Sources */,
 				18BB76922F9C9EC80098FF3D /* Frameworks */,
@@ -167,11 +167,11 @@
 			fileSystemSynchronizedGroups = (
 				18BB76972F9C9EC80098FF3D /* Shelify */,
 			);
-			name = Shelify;
+			name = Shelfify;
 			packageProductDependencies = (
 			);
 			productName = Shelify;
-			productReference = 18BB76952F9C9EC80098FF3D /* Shelify.app */;
+			productReference = 18BB76952F9C9EC80098FF3D /* Shelfify.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18BB77922FA4E31B0098FF3D /* SprintLiveActivityExtension */ = {
@@ -229,7 +229,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18BB76942F9C9EC80098FF3D /* Shelify */,
+				18BB76942F9C9EC80098FF3D /* Shelfify */,
 				18BB77922FA4E31B0098FF3D /* SprintLiveActivityExtension */,
 			);
 		};
@@ -562,7 +562,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18BB76A02F9C9ECB0098FF3D /* Build configuration list for PBXNativeTarget "Shelify" */ = {
+		18BB76A02F9C9ECB0098FF3D /* Build configuration list for PBXNativeTarget "Shelfify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18BB76A12F9C9ECB0098FF3D /* Debug */,
