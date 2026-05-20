@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct GhostView: View {
+    @Environment(\.displayScale) var displayScale
     @State var quote = ""
     let ghosts = [
         Ghost(imageName: "ghostly", ghostName: "ghostly", comments: GlobalVariables.ghostlyGhostQuotes, size: CGSize(width: 60, height: 80)),
@@ -21,7 +22,7 @@ struct GhostView: View {
     var body: some View {
         ZStack {
             ForEach(ghosts) { ghost in
-                SingleGhostView(screenSize: UIScreen.main.bounds.size, ghost: ghost)
+                SingleGhostView(screenSize: UIScreen.current?.bounds.size ?? CGSizeMake(400, 400), ghost: ghost)
                     .onTapGesture {
                         quote = ghost.comments.randomElement() ?? ""
                     }
@@ -43,5 +44,24 @@ struct GhostView: View {
             }
             .padding()
         }
+    }
+}
+
+extension UIWindow {
+    static var current: UIWindow? {
+        for scene in UIApplication.shared.connectedScenes {
+            guard let windowScene = scene as? UIWindowScene else { continue }
+            for window in windowScene.windows {
+                if window.isKeyWindow { return window }
+            }
+        }
+        return nil
+    }
+}
+
+
+extension UIScreen {
+    static var current: UIScreen? {
+        UIWindow.current?.screen
     }
 }

@@ -41,6 +41,8 @@ struct ContentView: View {
                                 navigationManager.navigate(to: .sprintFortyMins)
                             case .oneHr:
                                 navigationManager.navigate(to: .sprintOneHr)
+                            case .debug:
+                                navigationManager.navigate(to: .sprintDebug)
                             }
                         })
                     
@@ -56,6 +58,10 @@ struct ContentView: View {
                     SprintStack(time: 3600, action: {
                         navigationManager.reset()
                     })
+                case .sprintDebug:
+                    SprintStack(time: 5, action: {
+                            navigationManager.reset()
+                        })
                 }
             }
         }
@@ -68,4 +74,5 @@ enum HomePageRoute {
     case sprintTwentyMins
     case sprintFortyMins
     case sprintOneHr
+    case sprintDebug
 }

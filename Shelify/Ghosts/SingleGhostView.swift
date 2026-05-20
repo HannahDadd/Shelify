@@ -10,6 +10,7 @@ import SwiftUI
 struct SingleGhostView: View {
     @State private var position: CGPoint
     @State private var isVisible = false
+    @State private var inLoop = true
     let screenSize: CGSize
     let ghost: Ghost
     
@@ -35,22 +36,20 @@ struct SingleGhostView: View {
     }
     
     func spawnGhost() async {
-        while true {
-            try? await Task.sleep(for: .seconds(Double.random(in: 5...120)))
+        try? await Task.sleep(for: .seconds(Double.random(in: 5...120)))
+        position = randomPoint()
+        await MainActor.run {
+            isVisible = true
+        }
+        
+        try? await Task.sleep(for: .seconds(Double.random(in: 10...20)))
+        await MainActor.run {
             position = randomPoint()
-            await MainActor.run {
-                isVisible = true
-            }
-            
-            try? await Task.sleep(for: .seconds(Double.random(in: 10...20)))
-            await MainActor.run {
-                position = randomPoint()
-            }
-            
-            try? await Task.sleep(for: .seconds(Double.random(in: 8...20)))
-            await MainActor.run {
-                isVisible = false
-            }
+        }
+        
+        try? await Task.sleep(for: .seconds(Double.random(in: 8...20)))
+        await MainActor.run {
+            isVisible = false
         }
     }
     

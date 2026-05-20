@@ -20,6 +20,7 @@ struct GrowthHompage: View {
                 VStack {
                     Text("Start a focused writing sprint:")
                         .textCase(.uppercase)
+                    StartSprintCard(action: { sprintTapAction(.debug) }, text: "5 secs [debug only]", accessibilityString: "Start a 20 minute sprint")
                     StartSprintCard(action: { sprintTapAction(.twentyMins) }, text: "20 mins", accessibilityString: "Start a 20 minute sprint")
                     StartSprintCard(action: { sprintTapAction(.fortyMins) }, text: "40 mins", accessibilityString: "Start a 40 minute sprint")
                     StartSprintCard(action: { sprintTapAction(.oneHr) }, text: "1 hour", accessibilityString: "Start a 1 hour sprint")
@@ -35,6 +36,7 @@ struct GrowthHompage: View {
 }
 
 enum SprintDurations {
+    case debug
     case twentyMins
     case fortyMins
     case oneHr
