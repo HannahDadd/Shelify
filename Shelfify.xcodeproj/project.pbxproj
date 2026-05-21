@@ -50,6 +50,7 @@
 		18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprintLiveActivityAttributes.swift; sourceTree = "<group>"; };
 		18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bellefair-Regular.ttf"; sourceTree = "<group>"; };
 		18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
+		18FEFB582FBEEDEA005F3C3C /* Shelfify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shelfify.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -111,6 +112,7 @@
 		18BB768C2F9C9EC80098FF3D = {
 			isa = PBXGroup;
 			children = (
+				18FEFB582FBEEDEA005F3C3C /* Shelfify.entitlements */,
 				18BB77B12FA4E38B0098FF3D /* Shared */,
 				18BB76972F9C9EC80098FF3D /* Shelify */,
 				18BB77992FA4E31B0098FF3D /* SprintLiveActivity */,
@@ -410,6 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Shelfify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 98LCCL7TBW;
@@ -447,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Shelfify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 98LCCL7TBW;

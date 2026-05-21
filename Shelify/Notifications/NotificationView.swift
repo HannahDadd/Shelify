@@ -88,7 +88,7 @@ struct NotificationCTA: View {
         
         let content = UNMutableNotificationContent()
         content.title = "Let's get writing!"
-        content.subtitle = "Open Get it Write and start your writing sprint now!"
+        content.subtitle = "Open Shelfify and start your writing sprint now!"
         content.sound = UNNotificationSound.default
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
