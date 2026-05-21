@@ -11,9 +11,10 @@ struct AccessibilityView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 30) {
+            VStack(alignment: .leading, spacing: 30) {
                 Text("Accessibility features actively supported")
-                    .font(Font.custom("AbrilFatface-Regular", size: 24, relativeTo: .title))
+                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
+                    .multilineTextAlignment(.leading)
                 Text("""
 - VoiceOver
 - Voice Control
@@ -24,13 +25,7 @@ struct AccessibilityView: View {
 - Reduced Motion
 """)
                 .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
-                Text("Accessibility features not applicable")
-                    .font(Font.custom("AbrilFatface-Regular", size: 24, relativeTo: .title))
-                Text("""
-- Captions
-- Audio Descriptions
-""")
-                .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
+                .multilineTextAlignment(.leading)
             }
             .padding()
         }
