@@ -17,10 +17,6 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
             ZStack {
-                BackgroundView()
-                    .accessibilityHidden(true)
-                LibraryView()
-                    .accessibilityHidden(true)
                 if !reduceMotion {
                     GhostView()
                         .accessibilityHidden(true)
@@ -28,6 +24,14 @@ struct ContentView: View {
                 MenuBar(growAction: {
                     navigationManager.navigate(to: .sprint)
                 })
+            }
+            .background {
+                ZStack {
+                    BackgroundView()
+                        .accessibilityHidden(true)
+                    LibraryView()
+                        .accessibilityHidden(true)
+                }
             }
             .navigationDestination(for: HomePageRoute.self) { route in
                 switch route {

@@ -14,7 +14,8 @@ struct LibraryView: View {
         VStack {
             Image(getImageName())
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .scaledToFill()
+                .frame(alignment: .bottom)
         }
         .ignoresSafeArea()
     }
