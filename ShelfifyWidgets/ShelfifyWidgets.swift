@@ -18,6 +18,9 @@ struct ShelfifyWidgetsEntryView : View {
 
     var body: some View {
         Image(entry.assettName)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .ignoresSafeArea(edges: .all)
     }
 }
 
@@ -26,19 +29,28 @@ struct ShelfifyWidgets: Widget {
 
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            if #available(iOS 17.0, *) {
-                ShelfifyWidgetsEntryView(entry: entry)
-                    .containerBackground(.fill.tertiary, for: .widget)
-            } else {
-                ShelfifyWidgetsEntryView(entry: entry)
-                    .padding()
-                    .background()
-            }
+            ShelfifyWidgetsEntryView(entry: entry)
         }
+        .contentMarginsDisabled()
         .configurationDisplayName("Shelfify Widget")
         .supportedFamilies([
-            .systemMedium
+            .systemSmall
         ])
         .description("Widgets to keep you writing.")
+    }
+}
+
+extension WidgetConfiguration
+{
+    func contentMarginsDisabledIfAvailable() -> some WidgetConfiguration
+    {
+        if #available(iOSApplicationExtension 17.0, *)
+        {
+            return self.contentMarginsDisabled()
+        }
+        else
+        {
+            return self
+        }
     }
 }
