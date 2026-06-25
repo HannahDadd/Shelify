@@ -14,11 +14,11 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct ShelfifyWidgetsEntryView : View {
-    var entry: Provider.Entry
     @Environment(\.widgetFamily) private var family
+    var entry: Provider.Entry
     
     var body: some View {
-        Image(entry.assettName)
+        Image(getAssetName())
             .resizable()
             .aspectRatio(contentMode: .fill)
             .ignoresSafeArea(edges: .all)
@@ -27,9 +27,9 @@ struct ShelfifyWidgetsEntryView : View {
     func getAssetName() -> String {
         switch family {
         case .systemSmall:
-            return "mediumWidget_\(entry.assettName)"
-        case .systemMedium:
             return "smallWidget_\(entry.assettName)"
+        case .systemMedium:
+            return "mediumWidget_\(entry.assettName)"
         default:
             return "smallWidget_6"
         }
