@@ -14,7 +14,7 @@ struct Provider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), assettName: "6")
+        let entry = SimpleEntry(date: Date(), assettName: "5")
         completion(entry)
     }
 
