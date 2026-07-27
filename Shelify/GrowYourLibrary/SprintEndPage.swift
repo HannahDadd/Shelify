@@ -21,6 +21,7 @@ struct SprintEndPage: View {
             Spacer()
             StretchedButton(text: "Finish", action: {
                 wordsWritten = wordsWritten + endWordCount
+                let stat = Stat(id: UUID().hashValue, wordsWritten: endWordCount, date: Date())
                 action()
             })
         }
