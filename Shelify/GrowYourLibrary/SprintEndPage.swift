@@ -22,6 +22,19 @@ struct SprintEndPage: View {
             StretchedButton(text: "Finish", action: {
                 wordsWritten = wordsWritten + endWordCount
                 let stat = Stat(id: UUID().hashValue, wordsWritten: endWordCount, date: Date())
+                
+                // add statistics
+                var statsToAppend: [Stat] = []
+                let encoder = JSONEncoder()
+                if let data = UserDefaults.standard.data(forKey: UserDefaultNames.stats.rawValue) {
+                    if let decoded = try? JSONDecoder().decode([Stat].self, from: data) {
+                        statsToAppend.append(contentsOf: decoded)
+                    }
+                }
+                statsToAppend.append(stat)
+                if let encoded = try? encoder.encode(statsToAppend) {
+                    UserDefaults.standard.set(encoded, forKey: UserDefaultNames.stats.rawValue)
+                }
                 action()
             })
         }

@@ -10,6 +10,7 @@ import Foundation
 enum UserDefaultNames: String {
     case wordsWritten = "wordsWritten"
     case notification = "Notification"
+    case stats = "Stats"
 }
 
 public class GlobalVariables {
