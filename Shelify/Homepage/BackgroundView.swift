@@ -11,10 +11,10 @@ struct BackgroundView: View {
     let index = Int.random(in: 0...3)
     
     var body: some View {
-        if index == 0 {
-            RainView()
-        } else {
-            if index == 1 {
+        VStack {
+            if index == 0 {
+                RainView()
+            } else if index == 1 {
                 Image("day")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -28,5 +28,6 @@ struct BackgroundView: View {
                     .aspectRatio(contentMode: .fit)
             }
         }
+        .ignoresSafeArea()
     }
 }

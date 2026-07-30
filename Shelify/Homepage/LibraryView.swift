@@ -14,18 +14,17 @@ struct LibraryView: View {
         VStack {
             Image(getImageName())
                 .resizable()
-                .scaledToFill()
-                .frame(alignment: .bottom)
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .bottom)
         }
         .ignoresSafeArea()
     }
     
     func getImageName() -> String {
-        for i in 1...20 {
+        for i in 1...21 {
             if wordsWritten < (i * 1000) {
                 return "library-\(i)"
             }
         }
-        return "library-20"
+        return "library-21"
     }
 }
