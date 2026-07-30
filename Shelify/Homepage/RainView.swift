@@ -33,7 +33,7 @@ struct RainView: View {
             VStack {
                 Image("rain")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .bottom)
             }
             
             if !reduceMotion {

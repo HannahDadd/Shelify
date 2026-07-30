@@ -23,6 +23,8 @@ struct ContentView: View {
                 }
                 MenuBar(growAction: {
                     navigationManager.navigate(to: .sprint)
+                }, crystalBallAction: {
+                    navigationManager.navigate(to: .crystalBall)
                 })
             }
             .background {
@@ -66,6 +68,8 @@ struct ContentView: View {
                     SprintStack(time: 5, action: {
                             navigationManager.reset()
                         })
+                case .crystalBall:
+                    CrystalBallView()
                 }
             }
         }
@@ -79,4 +83,6 @@ enum HomePageRoute {
     case sprintFortyMins
     case sprintOneHr
     case sprintDebug
+    
+    case crystalBall
 }

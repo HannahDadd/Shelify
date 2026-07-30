@@ -11,6 +11,7 @@ struct MenuBar: View {
     @State var showSettingsSheet = false
     @State private var showButtons: Bool = false
     let growAction: () -> Void
+    let crystalBallAction: () -> Void
     let buttonlength = CGFloat(75)
     
     var body: some View {
@@ -47,6 +48,18 @@ struct MenuBar: View {
                 }
                 .padding()
                 Spacer()
+                VStack {
+                    Spacer()
+                    Button {
+                        crystalBallAction()
+                    } label: {
+                        Image("crystal_btn")
+                            .resizable()
+                            .frame(width: buttonlength, height: buttonlength)
+                            .accessibilityLabel("See the Future")
+                    }
+                    .padding()
+                }
             }
         }
         .sheet(isPresented: $showSettingsSheet, content: {
