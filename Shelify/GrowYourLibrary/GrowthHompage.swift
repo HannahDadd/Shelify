@@ -15,7 +15,7 @@ struct GrowthHompage: View {
         ScrollView {
             VStack(spacing: 48) {
                 Text("You've written \(wordsWritten) words with Shelify")
-                    .font(Font.custom("Bellefair-Regular", size: 28, relativeTo: .title))
+                    .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .title3))
                     .multilineTextAlignment(.center)
                 VStack {
                     Text("Start a focused writing sprint:")

@@ -19,6 +19,7 @@ struct MenuBar: View {
             Spacer()
             HStack {
                 VStack(spacing: 16) {
+                    Spacer()
                     if showButtons {
                         Button {
                             growAction()
