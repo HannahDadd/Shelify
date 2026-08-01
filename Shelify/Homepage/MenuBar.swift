@@ -10,6 +10,8 @@ import SwiftUI
 struct MenuBar: View {
     @State var showSettingsSheet = false
     @State private var showButtons: Bool = false
+    @State private var stats: [Stat] = []
+    
     let growAction: () -> Void
     let crystalBallAction: () -> Void
     let statsAction: () -> Void
@@ -30,13 +32,15 @@ struct MenuBar: View {
                                 .frame(width: buttonlength, height: buttonlength)
                                 .accessibilityLabel("Grow you library")
                         }
-                        Button {
-                            statsAction()
-                        } label: {
-                            Image("graph_btn")
-                                .resizable()
-                                .frame(width: buttonlength, height: buttonlength)
-                                .accessibilityLabel("Your Writing Statistics")
+                        if !stats.isEmpty {
+                            Button {
+                                statsAction()
+                            } label: {
+                                Image("graph_btn")
+                                    .resizable()
+                                    .frame(width: buttonlength, height: buttonlength)
+                                    .accessibilityLabel("Your Writing Statistics")
+                            }
                         }
                         Button {
                             showSettingsSheet = true
@@ -69,6 +73,13 @@ struct MenuBar: View {
                             .accessibilityLabel("See the Future")
                     }
                     .padding()
+                }
+            }
+        }
+        .onAppear {
+            if let data = UserDefaults.standard.data(forKey: UserDefaultNames.stats.rawValue) {
+                if let decoded = try? JSONDecoder().decode([Stat].self, from: data) {
+                    stats = decoded
                 }
             }
         }

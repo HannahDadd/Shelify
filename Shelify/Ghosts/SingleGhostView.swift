@@ -11,6 +11,7 @@ struct SingleGhostView: View {
     @State private var position: CGPoint
     @State private var isVisible = false
     @State private var inLoop = true
+    
     let screenSize: CGSize
     let ghost: Ghost
     

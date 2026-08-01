@@ -10,6 +10,7 @@ import SwiftUI
 struct GhostView: View {
     @Environment(\.displayScale) var displayScale
     @State var quote = ""
+    
     let ghosts = [
         Ghost(imageName: "ghostly", ghostName: "ghostly", comments: GlobalVariables.ghostlyGhostQuotes, size: CGSize(width: 60, height: 60)),
         Ghost(imageName: "sid", ghostName: "sid", comments: GlobalVariables.sidGhostQuotes, size: CGSize(width: 60, height: 60)),
@@ -24,6 +25,9 @@ struct GhostView: View {
             ForEach(ghosts) { ghost in
                 SingleGhostView(screenSize: UIScreen.current?.bounds.size ?? CGSizeMake(400, 400), ghost: ghost)
                     .onTapGesture {
+                        if quote == "" {
+                            delayText()
+                        }
                         quote = ghost.comments.randomElement() ?? ""
                     }
             }
@@ -43,6 +47,12 @@ struct GhostView: View {
                 Spacer()
             }
             .padding()
+        }
+    }
+    
+    private func delayText() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            quote = ""
         }
     }
 }

@@ -63,8 +63,6 @@ struct GraphForWriter: View {
                 if let data = UserDefaults.standard.data(forKey: UserDefaultNames.stats.rawValue) {
                     if let decoded = try? JSONDecoder().decode([Stat].self, from: data) {
                         stats = decoded
-//                        dayValues = getDaysWriting()
-//                        dayNumbs = dayValues.map { $0.key }
                     }
                 }
             }
