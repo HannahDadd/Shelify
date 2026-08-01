@@ -25,6 +25,8 @@ struct ContentView: View {
                     navigationManager.navigate(to: .sprint)
                 }, crystalBallAction: {
                     navigationManager.navigate(to: .crystalBall)
+                }, statsAction: {
+                    navigationManager.navigate(to: .stats)
                 })
             }
             .background {
@@ -70,6 +72,8 @@ struct ContentView: View {
                         })
                 case .crystalBall:
                     CrystalBallView()
+                case .stats:
+                    GraphForWriter()
                 }
             }
         }
@@ -85,4 +89,5 @@ enum HomePageRoute {
     case sprintDebug
     
     case crystalBall
+    case stats
 }

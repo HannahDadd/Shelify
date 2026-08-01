@@ -12,6 +12,7 @@ struct MenuBar: View {
     @State private var showButtons: Bool = false
     let growAction: () -> Void
     let crystalBallAction: () -> Void
+    let statsAction: () -> Void
     let buttonlength = CGFloat(75)
     
     var body: some View {
@@ -28,6 +29,14 @@ struct MenuBar: View {
                                 .resizable()
                                 .frame(width: buttonlength, height: buttonlength)
                                 .accessibilityLabel("Grow you library")
+                        }
+                        Button {
+                            statsAction()
+                        } label: {
+                            Image("graph_btn")
+                                .resizable()
+                                .frame(width: buttonlength, height: buttonlength)
+                                .accessibilityLabel("Your Writing Statistics")
                         }
                         Button {
                             showSettingsSheet = true
