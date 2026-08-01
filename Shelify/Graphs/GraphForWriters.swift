@@ -15,11 +15,11 @@ struct GraphForWriter: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 12) {
-                Text("✨ Your Writing Stats ✨")
-                    .font(Font.custom("DynaPuff-Regular", size: 24, relativeTo: .headline))
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 12)
+            VStack(spacing: 24) {
+//                Text("✨ Your Writing Stats ✨")
+//                    .font(Font.custom("DynaPuff-Regular", size: 24, relativeTo: .headline))
+//                    .multilineTextAlignment(.center)
+//                    .padding(.bottom, 12)
                 VStack(alignment: .leading, spacing: 8) {
                     Text("All Time Sprints")
                         .font(Font.custom("DynaPuff-Regular", size: 18, relativeTo: .title))
@@ -40,6 +40,7 @@ struct GraphForWriter: View {
                 
                 VStack(alignment: .leading, spacing: 8) {
                     let monthlyStats = getMonthlyStats()
+                    let bestStatMonthly = getBestStat(stats: monthlyStats)
                     
                     Text("Monthly Sprints")
                         .font(Font.custom("DynaPuff-Regular", size: 18, relativeTo: .title))
@@ -56,10 +57,16 @@ struct GraphForWriter: View {
                     }
                     .aspectRatio(1.4, contentMode: .fit)
                     .chartYAxisLabel("Words Written")
+                    
+                    if let bestStatMonthly = bestStatMonthly {
+                        Text("Your best sprint this year was on \(bestStatMonthly.date.formatted(date: .long, time: .shortened)) where you wrote \(bestStatMonthly.wordsWritten) words.")
+                            .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .body))
+                    }
                 }
                 
                 VStack(alignment: .leading, spacing: 8) {
                     let yearlyStats = getYearlyStats()
+                    let bestStat = getBestStat(stats: yearlyStats)
                     
                     Text("Yearly Sprints")
                         .font(Font.custom("DynaPuff-Regular", size: 18, relativeTo: .title))
@@ -76,6 +83,11 @@ struct GraphForWriter: View {
                     }
                     .aspectRatio(1.4, contentMode: .fit)
                     .chartYAxisLabel("Words Written")
+                    
+                    if let bestStat = bestStat {
+                        Text("Your best sprint this year was on \(bestStat.date.formatted(date: .long, time: .shortened)) where you wrote \(bestStat.wordsWritten) words.")
+                            .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .body))
+                    }
                 }
             }
             .padding()
@@ -86,7 +98,7 @@ struct GraphForWriter: View {
                     }
                 }
             }
-            //.navigationBarTitle(Text("✨ Your Writing Stats ✨").font(Font.custom("DynaPuff-Regular", size: 24, relativeTo: .headline)))
+            .navigationBarTitle(Text("✨ Your Writing Stats ✨").font(Font.custom("DynaPuff-Regular", size: 24, relativeTo: .headline)))
         }
     }
     
@@ -104,9 +116,9 @@ struct GraphForWriter: View {
         return stats.filter { Calendar.current.dateComponents([.year], from: $0.date) == todaysMonth }
     }
     
-//    private func getBestStat(stats: [Stat]) -> Stat? {
-//        return stats.max { $0.wordsWritten }
-//    }
+    private func getBestStat(stats: [Stat]) -> Stat? {
+        return stats.max { $0.wordsWritten < $1.wordsWritten }
+    }
     
     private func getDaysWriting() -> [Int : Int] {
         let daysOfWeek = stats
