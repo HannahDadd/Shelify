@@ -14,6 +14,7 @@ struct NumberSection: View {
     var body : some View {
         VStack {
             Text(text).bold().frame(maxWidth: .infinity, alignment: .leading)
+                .font(Font.custom("BelleFair-Regular", size: 18, relativeTo: .body))
             TextField("\(text)", value: $response, format: .number)
                 .keyboardType(.numberPad)
                 .textFieldStyle(.roundedBorder)
