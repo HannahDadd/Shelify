@@ -13,7 +13,7 @@ struct AccessibilityView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 30) {
                 Text("Accessibility features actively supported")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
+                    .font(Font.custom("DynaPuff-Regular", size: 34, relativeTo: .title))
                     .multilineTextAlignment(.leading)
                 Text("""
 - VoiceOver

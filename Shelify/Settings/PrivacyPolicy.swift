@@ -13,7 +13,7 @@ struct PrivacyPolicy: View {
         ScrollView {
             VStack(spacing: 30) {
                 Text("PRIVACY POLICY")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
+                    .font(Font.custom("DynaPuff-Regular", size: 34, relativeTo: .title))
                 Text("[Our Privacy Policy can be found on our website](https://writingapps5.wordpress.com/privacy-policy-writing-games/)")
                     .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
             }

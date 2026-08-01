@@ -13,7 +13,7 @@ struct TsAndCsView: View {
         ScrollView {
             VStack(spacing: 30) {
                 Text("TERMS OF SERVICE")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
+                    .font(Font.custom("DynaPuff-Regular", size: 34, relativeTo: .title))
                 Text("""
  Last updated: May 20, 2026
  Welcome to Shelfify. By downloading or using the app, you agree to these Terms of Service.
