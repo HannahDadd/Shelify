@@ -15,50 +15,70 @@ struct GraphForWriter: View {
     
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 30) {
-                if stats.count < 2 {
-                    Text("Not enough statistics to show yet! Keep writing!")
-                } else {
-                    Text("You've written a total of \(getWordsWritten()) words across \(stats.count) sprints!")
-                        .bold()
+            VStack(spacing: 12) {
+                Text("✨ Your Writing Stats ✨")
+                    .font(Font.custom("DynaPuff-Regular", size: 24, relativeTo: .headline))
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 12)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("All Time Sprints")
+                        .font(Font.custom("DynaPuff-Regular", size: 18, relativeTo: .title))
+                        .multilineTextAlignment(.leading)
+                    Text("You've written a total of \(getWordsWritten()) words across \(stats.count) sprints in the app.")
+                        .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .body))
                     
                     Chart {
-                        ForEach(stats) { stat in
-                            BarMark(x: .value("Date", stat.date.formatted(date: .long, time: .shortened)),
-                                    y: .value("Words written", stat.wordsWritten))
-                            .foregroundStyle(Color.primary)
-                        }
-                    }
-                    .aspectRatio(1, contentMode: .fit)
-                    .chartXAxisLabel("Date")
-                    .chartYAxisLabel("Words Written")
-                    
-                    Chart {
-                        ForEach(stats) { stat in
-                            LineMark(x: .value("Date", stat.date.formatted(date: .long, time: .shortened)),
+                        ForEach(Array(zip(stats.indices, stats)), id: \.0) { index, stat in
+                            LineMark(x: .value("", index),
                                      y: .value("Words written", stat.wordsWritten))
                             .foregroundStyle(Color.primary)
                         }
                     }
-                    .aspectRatio(1, contentMode: .fit)
-                    .chartXAxisLabel("Date")
+                    .aspectRatio(1.4, contentMode: .fit)
                     .chartYAxisLabel("Words Written")
+                }
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    let monthlyStats = getMonthlyStats()
                     
-//                    VStack {
-//                        Text("You're favourite day to write is \(getFavouriteDayOfWeek(scores: dayValues))")
-//                            .bold()
-//                        Chart {
-//                            ForEach($dayNumbs, id: \.hashValue) { day in
-//                                BarMark(x: .value("Date", getDayOfWeek(day: day.wrappedValue)),
-//                                        y: .value("Frequency", dayValues[day.wrappedValue] ?? 0))
-//                                .foregroundStyle(Color.primary)
-//                            }
-//                        }
-//                        .aspectRatio(1, contentMode: .fit)
-//                        .chartXAxisLabel("Day")
-//                    }
+                    Text("Monthly Sprints")
+                        .font(Font.custom("DynaPuff-Regular", size: 18, relativeTo: .title))
+                        .multilineTextAlignment(.leading)
+                    Text("You've completed \(monthlyStats.count) sprints this month.")
+                        .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .body))
+                    
+                    Chart {
+                        ForEach(Array(zip(monthlyStats.indices, monthlyStats)), id: \.0) { index, stat in
+                            BarMark(x: .value("", index),
+                                    y: .value("Words written", stat.wordsWritten))
+                            .foregroundStyle(Color.primary)
+                        }
+                    }
+                    .aspectRatio(1.4, contentMode: .fit)
+                    .chartYAxisLabel("Words Written")
+                }
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    let yearlyStats = getYearlyStats()
+                    
+                    Text("Yearly Sprints")
+                        .font(Font.custom("DynaPuff-Regular", size: 18, relativeTo: .title))
+                        .multilineTextAlignment(.leading)
+                    Text("You've completed \(yearlyStats.count) sprints this year.")
+                        .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .body))
+                    
+                    Chart {
+                        ForEach(Array(zip(yearlyStats.indices, yearlyStats)), id: \.0) { index, stat in
+                            LineMark(x: .value("", index),
+                                     y: .value("Words written", stat.wordsWritten))
+                            .foregroundStyle(Color.primary)
+                        }
+                    }
+                    .aspectRatio(1.4, contentMode: .fit)
+                    .chartYAxisLabel("Words Written")
                 }
             }
+            .padding()
             .onAppear {
                 if let data = UserDefaults.standard.data(forKey: UserDefaultNames.stats.rawValue) {
                     if let decoded = try? JSONDecoder().decode([Stat].self, from: data) {
@@ -66,12 +86,27 @@ struct GraphForWriter: View {
                     }
                 }
             }
+            //.navigationBarTitle(Text("✨ Your Writing Stats ✨").font(Font.custom("DynaPuff-Regular", size: 24, relativeTo: .headline)))
         }
     }
     
     private func getWordsWritten() -> Int {
         return stats.compactMap { $0.wordsWritten }.reduce(0, +)
     }
+    
+    private func getMonthlyStats() -> [Stat] {
+        let todaysMonth = Calendar.current.dateComponents([.month], from: Date())
+        return stats.filter { Calendar.current.dateComponents([.month], from: $0.date) == todaysMonth }
+    }
+    
+    private func getYearlyStats() -> [Stat] {
+        let todaysMonth = Calendar.current.dateComponents([.year], from: Date())
+        return stats.filter { Calendar.current.dateComponents([.year], from: $0.date) == todaysMonth }
+    }
+    
+//    private func getBestStat(stats: [Stat]) -> Stat? {
+//        return stats.max { $0.wordsWritten }
+//    }
     
     private func getDaysWriting() -> [Int : Int] {
         let daysOfWeek = stats

@@ -32,7 +32,7 @@ struct MenuBar: View {
                                 .frame(width: buttonlength, height: buttonlength)
                                 .accessibilityLabel("Grow you library")
                         }
-                        if !stats.isEmpty {
+                        if stats.count > 2 {
                             Button {
                                 statsAction()
                             } label: {

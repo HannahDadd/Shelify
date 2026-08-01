@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Stat: Encodable, Decodable, Identifiable {
+struct Stat: Encodable, Decodable, Identifiable, Hashable {
     let id: Int
     let wordsWritten: Int
     let date: Date
