@@ -18,12 +18,13 @@ struct PopupPromo: View {
         } label: {
             VStack(alignment: .leading) {
                 Text(title)
+                    .font(Font.custom("DynaPuff-Regular", size: 18, relativeTo: .headline))
                     .multilineTextAlignment(.leading)
-                    .font(.headline)
                     .foregroundColor(.white)
                 Spacer()
                 Text(subtitle)
                     .multilineTextAlignment(.leading)
+                    .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .headline))
                     .lineLimit(2)
                     .font(.subheadline)
                     .foregroundColor(.white)

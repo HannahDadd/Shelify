@@ -23,7 +23,7 @@ struct NotificationCTA: View {
                 }
             } else {
                 VStack {
-                    PopupPromo(title: "Lets get that book written", subtitle: "Set a daily notification", action: {
+                    PopupPromo(title: "Let's get that book written", subtitle: "Set a daily notification", action: {
                         showSetSheet = true
                     })
                 }

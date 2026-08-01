@@ -26,7 +26,8 @@ struct SingleGhostView: View {
     var body: some View {
         Image(ghost.imageName)
             .resizable()
-            .frame(width: ghost.size.width, height: ghost.size.height)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 60)
             .position(position)
             .opacity(isVisible ? 0.4 : 0)
             .animation(.easeInOut(duration: 10), value: position)

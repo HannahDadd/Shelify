@@ -14,8 +14,8 @@
 		18BB77B42FA4E3A80098FF3D /* SprintLiveActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */; };
 		18BB77C12FA4EC870098FF3D /* Bellefair-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */; };
 		18BB77C22FA4EC870098FF3D /* Bellefair-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */; };
-		18BB77C42FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */; };
-		18BB77C52FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */; };
+		18D272F9301B40410021BF37 /* DynaPuff-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D272F8301B40410021BF37 /* DynaPuff-Regular.ttf */; };
+		18D272FA301B40410021BF37 /* DynaPuff-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18D272F8301B40410021BF37 /* DynaPuff-Regular.ttf */; };
 		18FEFC622FD6B65D005F3C3C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BB77952FA4E31B0098FF3D /* WidgetKit.framework */; };
 		18FEFC632FD6B65D005F3C3C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BB77972FA4E31B0098FF3D /* SwiftUI.framework */; };
 		18FEFC6E2FD6B660005F3C3C /* ShelfifyWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 18FEFC612FD6B65C005F3C3C /* ShelfifyWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -60,7 +60,7 @@
 		18BB77972FA4E31B0098FF3D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprintLiveActivityAttributes.swift; sourceTree = "<group>"; };
 		18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bellefair-Regular.ttf"; sourceTree = "<group>"; };
-		18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
+		18D272F8301B40410021BF37 /* DynaPuff-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DynaPuff-Regular.ttf"; sourceTree = "<group>"; };
 		18FEFB582FBEEDEA005F3C3C /* Shelfify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shelfify.entitlements; sourceTree = "<group>"; };
 		18FEFC612FD6B65C005F3C3C /* ShelfifyWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShelfifyWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -180,7 +180,7 @@
 		18BB77B12FA4E38B0098FF3D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				18BB77C32FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf */,
+				18D272F8301B40410021BF37 /* DynaPuff-Regular.ttf */,
 				18BB77C02FA4EC870098FF3D /* Bellefair-Regular.ttf */,
 				18BB77B22FA4E39B0098FF3D /* SprintLiveActivityAttributes.swift */,
 			);
@@ -307,7 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BB77C52FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf in Resources */,
+				18D272F9301B40410021BF37 /* DynaPuff-Regular.ttf in Resources */,
 				18BB77C22FA4EC870098FF3D /* Bellefair-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BB77C42FA4EC8E0098FF3D /* AbrilFatface-Regular.ttf in Resources */,
+				18D272FA301B40410021BF37 /* DynaPuff-Regular.ttf in Resources */,
 				18BB77C12FA4EC870098FF3D /* Bellefair-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
