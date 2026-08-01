@@ -9,20 +9,13 @@ import SwiftUI
 
 struct SprintView: View {
     @State var quoteNumber = 0
+    let index = Int.random(in: 1...3)
     let endState: () -> Void
     let time: Int
     
     var body: some View {
         VStack(spacing: 8) {
             Spacer()
-            Text("\(GlobalVariables.inspiringQuotes[quoteNumber])")
-                .foregroundColor(Color.white)
-                .font(Font.custom("Bellefair-Regular", size: 28, relativeTo: .title))
-                .multilineTextAlignment(.center)
-            Spacer()
-            Text("Sprint Time Remianing:")
-                .foregroundStyle(Color.white)
-                .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
             CountdownTimer(timeRemaining: time, endState: {
                 endState()
             }, textSize: 120, timeRemainingAction: { timeRemaining in
@@ -31,9 +24,22 @@ struct SprintView: View {
                 }
             })
             Spacer()
+            Spacer()
+            Text("\(GlobalVariables.inspiringQuotes[quoteNumber])")
+                .foregroundColor(Color.black)
+                .multilineTextAlignment(.center)
+                .font(Font.custom("DynaPuff-Regular", size: 28, relativeTo: .title))
+            Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(Color.card))
+        .background {
+            VStack {
+                Image("sprint_bg_\(index)")
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height, alignment: .bottom)
+            }
+            .ignoresSafeArea()
+        }
     }
 }

@@ -18,7 +18,7 @@ struct StartSprintCard: View {
         } label: {
             VStack(alignment: .leading) {
                 Text(text)
-                    .font(Font.custom("AbrilFatface-Regular", size: 28, relativeTo: .body))
+                    .font(Font.custom("DynaPuff-Regular", size: 18, relativeTo: .body))
                     .foregroundColor(Color.white)
                     .bold()
                     .multilineTextAlignment(.leading)
