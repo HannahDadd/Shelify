@@ -30,6 +30,7 @@ struct SprintView: View {
                 .multilineTextAlignment(.center)
                 .font(Font.custom("DynaPuff-Regular", size: 28, relativeTo: .title))
             Spacer()
+            StretchedButton(text: "End Sprint Early", action: { endState() })
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
