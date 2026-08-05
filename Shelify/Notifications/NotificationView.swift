@@ -39,9 +39,11 @@ struct NotificationCTA: View {
         .sheet(isPresented: $showEditSheet) {
             VStack(alignment: .center, spacing: 48) {
                 Text("Edit Daily Notification")
-                    .font(Font.custom("AbrilFatface-Regular", size: 34, relativeTo: .title))
+                    .font(Font.custom("DynaPuff-Regular", size: 34, relativeTo: .title))
+                    .multilineTextAlignment(.center)
                 VStack(alignment: .leading) {
                     Text("Set new time of daily notification:")
+                        .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
                         .multilineTextAlignment(.leading)
                     DatePicker("Time:", selection: $time, displayedComponents: .hourAndMinute)
                 }

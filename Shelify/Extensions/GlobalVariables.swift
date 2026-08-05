@@ -53,7 +53,7 @@ public class GlobalVariables {
     ]
     
     public static let paulineGhostQuotes = [
-        "I think I like books more than people.",
+        "I think I like your books more than people.",
         "I need more books.",
         "Keep writing.",
         "Some ghost haunt graveyards, but I was always gonna end up in a library.",
