@@ -54,10 +54,14 @@ struct NotificationCTA: View {
                     notif = true
                     showEditSheet = false
                 })
-                Button("Cancel Notification", action: {
+                Button(action: {
                     turnOff()
                     notif = false
                     showEditSheet = false
+                }, label: {
+                    Text("Cancel")
+                        .font(Font.custom("Bellefair-Regular", size: 18, relativeTo: .body))
+                        .multilineTextAlignment(.leading)
                 })
             }
             .padding()
