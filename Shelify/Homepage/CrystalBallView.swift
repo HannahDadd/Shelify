@@ -12,7 +12,7 @@ struct CrystalBallView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("Library completes at 100k words")
+            Text("Library completes at 80k words")
                 .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .caption))
                 .padding()
                 .background(in: .capsule)

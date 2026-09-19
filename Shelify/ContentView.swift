@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage(UserDefaultNames.wordsWritten.rawValue) var wordsWritten: Int = 0
     @Environment(\.accessibilityReduceMotion) var reduceMotion
     @StateObject private var navigationManager = NavigationManager<HomePageRoute>()
     @State var path = NavigationPath([
@@ -28,6 +29,14 @@ struct ContentView: View {
                 }, statsAction: {
                     navigationManager.navigate(to: .stats)
                 })
+                VStack {
+                    Text("You've written \(wordsWritten) words")
+                        .font(Font.custom("Bellefair-Regular", size: 14, relativeTo: .caption))
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .background(in: .capsule)
+                    Spacer()
+                }
             }
             .background {
                 ZStack {
