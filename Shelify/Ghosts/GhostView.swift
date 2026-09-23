@@ -32,6 +32,7 @@ struct GhostView: View {
                     }
             }
             VStack {
+                Spacer()
                 if quote != "" {
                     Text(quote)
                         .containerShape(.rect)
